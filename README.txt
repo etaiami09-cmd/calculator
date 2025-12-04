@@ -17,6 +17,7 @@ Project Structure
 calculator/
     main.py
     README.txt
+    LICESNSE.md
 
 Example Usage
 ==================================
