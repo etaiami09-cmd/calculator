@@ -1,52 +1,38 @@
+from display import *
 def main():
     print("Welcome to the calculator application!")
     while True:
+        display_options()
         go_back = False
-        print("==============================================")
-        print("Please choose one of the following operations:")
-        print("1. Add")
-        print("2. Subtract")
-        print("3. Multiply")
-        print("4. Divide")
-        print("==============================================")
-        print("Enter your choice:")
         try:
             choice = int(input())
         except ValueError:
-            print("That is not a valid input!")
-            print("Press Enter to restart.")
+            bad_input()
             input()
             continue
         if choice not in [1,2,3,4]:
-            print("That is not a valid input!")
-            print("Press Enter to restart.")
+            bad_input()
             input()
             continue
-        print("==============================================")
-        print("enter your first number:")
-        print("==============================================")
+        request_number(1)
         while True:
             try:
                 num1 = float(input())
                 break
             except ValueError:
-                print("That is not a valid input!")
-                print("Press Enter to try again or enter 1 to go back")
+                bad_input()
                 if (input()=='1'):
                     go_back = True
                     break
         if go_back:
             continue
-        print("==============================================")
-        print("enter your second number:")
-        print("==============================================")
+        request_number(2)
         while True:
             try:
                 num2 = float(input())
                 break
             except ValueError:
-                print("That is not a valid input!")
-                print("Press Enter to try again or enter 1 to go back")
+                bad_input()
                 if (input()=='1'):
                     go_back=True
                     break
@@ -62,15 +48,10 @@ def main():
             try:
                 result = num1/num2
             except ZeroDivisionError:
-                print("ERROR")
-                print("Cannot divide by zero!")
-                print("Press Enter to return to start.")
+                div_zero_complain()
                 input()
                 continue
-        print("==============================================")
-        print(f"Result: {result}")
-        print("==============================================")
-        print("Press Enter to go back to start.")
+        display_result(result)
         input()
 
 if __name__=='__main__':

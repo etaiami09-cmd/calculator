@@ -16,6 +16,7 @@ Project Structure
 ==================================
 calculator/
     main.py
+    display.py
     README.txt
     LICESNSE.md
 
