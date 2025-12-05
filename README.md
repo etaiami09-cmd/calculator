@@ -1,17 +1,17 @@
-======================================================================
 This is a personal Python calculator Console Application project
+==================================
 
 Features
 ==================================
-- calculations
+Calculations:
  - Addition
  - Subtraction
  - Multiplication
  - Division
-- Error handling
+Error handling:
  - Program correctly handles attempted division by zero
  - Program correctly handles invalid inputs
-- History tracking
+History tracking:
  - Remembers last 10 operations performed
  - can print string representations of these operations
 
