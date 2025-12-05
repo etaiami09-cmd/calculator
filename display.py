@@ -10,8 +10,11 @@ def display_options():
 def bad_input():
     print("That is not a valid input!")
     print("Press Enter to restart.")
+def bad_input_exit():
+    print("That is not a valid input!")
+    print("Press Enter to try again or 1 to restart!")
 def request_number(index):
-    lit_index = "first" if index == 1 else "first"
+    lit_index = "first" if index == 1 else "second"
     print("==============================================")
     print(f"enter your {lit_index} number:")
     print("==============================================")
