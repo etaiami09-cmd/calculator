@@ -1,16 +1,19 @@
+import sys
+import asyncio
 from display import *
 from inputs import *
 from history import Tracker
 from utils import *
+if sys.platform == "win32":
+    asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
 def main():
     print("Welcome to the calculator application!")
     tracker = Tracker()
     while True:
         num1=0
         num2=0
-        display_options()
         go_back = False
-        choice, go_back = get_choice(tracker)
+        choice, go_back = prompt_choice(tracker)
         if go_back:
             continue
         request_number(1)

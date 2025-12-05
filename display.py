@@ -1,7 +1,7 @@
 from history import Tracker
 def display_options():
     print("==============================================")
-    print("Please choose one of the following operations:")
+    print("Please choose one of the following options:")
     print("1. Add")
     print("2. Subtract")
     print("3. Multiply")
