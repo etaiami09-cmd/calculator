@@ -1,13 +1,18 @@
 from display import *
-def get_choice():
+from history import Tracker
+def get_choice(tracker):
     try:
         choice = int(input())
     except ValueError:
         bad_input()
         input()
         return 0, True
-    if choice not in [1,2,3,4]:
+    if choice not in [1,2,3,4,5]:
         bad_input()
+        input()
+        return 0, True
+    if choice==5:
+        display_history(tracker)
         input()
         return 0, True
     return choice, False

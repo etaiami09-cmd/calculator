@@ -1,13 +1,16 @@
 from display import *
 from inputs import *
+from history import Tracker
+from utils import *
 def main():
     print("Welcome to the calculator application!")
+    tracker = Tracker()
     while True:
         num1=0
         num2=0
         display_options()
         go_back = False
-        choice, go_back = get_choice()
+        choice, go_back = get_choice(tracker)
         if go_back:
             continue
         request_number(1)
@@ -31,7 +34,11 @@ def main():
                 div_zero_complain()
                 input()
                 continue
+        result = safe_floats(result)
+        num1 = safe_floats(num1)
+        num2 = safe_floats(num2)
         display_result(result)
+        tracker.add_calculation(f'{num1}{string_operations()[choice]}{num2}={result}')
         input()
 
 if __name__=='__main__':

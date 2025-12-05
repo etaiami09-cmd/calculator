@@ -1,3 +1,4 @@
+from history import Tracker
 def display_options():
     print("==============================================")
     print("Please choose one of the following operations:")
@@ -5,6 +6,7 @@ def display_options():
     print("2. Subtract")
     print("3. Multiply")
     print("4. Divide")
+    print("5. Show history")
     print("==============================================")
     print("Enter your choice:")
 def bad_input():
@@ -25,5 +27,12 @@ def div_zero_complain():
 def display_result(result):
     print("==============================================")
     print(f"Result: {result}")
+    print("==============================================")
+    print("Press Enter to go back to start.")
+def display_history(tracker):
+    print("==============================================")
+    print("Calculation history:")
+    for calculation in tracker.calculations_by_recent():
+        print(calculation)
     print("==============================================")
     print("Press Enter to go back to start.")
